@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellar Explosion</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        let particles = [];
+        let exploding = false;
+
+        function setup() {
+            createCanvas(400, 400);
+        }
+
+        function draw() {
+            background(0);
+            if (exploding) {
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].show();
+                }
+            }
+        }
+
+        function mousePressed() {
+            particles = [];
+            exploding = true;
+            for (let i = 0; i < 100; i++) {
+                let p = new Particle(width / 2, height / 2);
+                particles.push(p);
+            }
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.pos = createVector(x, y);
+                this.vel = createVector(random(-3, 3), random(-3, 3));
+                this.acc = createVector(0, 0);
+            }
+
+            update() {
+                this.vel.add(this.acc);
+                this.pos.add(this.vel);
+                this.acc.mult(0);
+            }
+
+            show() {
+                fill(random(255), random(255), random(255));
+                noStroke();
+                ellipse(this.pos.x, this.pos.y, 10, 10);
+            }
+        }
+    </script>
+</body>
+</html>

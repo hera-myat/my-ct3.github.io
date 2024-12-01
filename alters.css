@@ -1,0 +1,173 @@
+/* Prevent text selection and dragging */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #39FF14; /* Change text color to neon green */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+}
+
+body {
+    background: transparent; /* Make the body background transparent */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 100vh; /* Ensure full page height */
+}
+
+/* Apply the gradient effect to any text that should have this effect */
+nav a, .click-caption, .logo a, .introduction, .alien-container, .nav-links li, h1, p {
+    background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* Initial gradient */
+    -webkit-background-clip: text; /* Clip the background to text */
+    color: #39FF14; /* Change text color to neon green */
+    transition: background-image 0.5s ease; /* Smooth transition */
+    cursor: pointer; /* Make the elements clickable */
+}
+
+/* Gradient effect on hover */
+nav a:hover, .click-caption:hover, .logo a:hover, .introduction:hover, .alien-container:hover, .nav-links li:hover, h1:hover, p:hover {
+    animation: gradientEffect 3s infinite; /* Apply gradient effect animation */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blink cursor effect */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Neon green "Explore My Alters" title without neon effect */
+h1.title {
+    font-size: 2em;
+    color: #39FF14; /* Neon Green color */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide text that overflows */
+    border-right: 4px solid #39FF14; /* Simulate a cursor effect */
+    animation: typing 3.5s steps(30) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+}
+
+/* Style the rest of your elements as before */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Keep the navigation bar background dark */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #39FF14; /* Change text color to neon green */
+    padding: 5px 10px;
+    font-size: 1.1em;
+    user-select: none;
+}
+
+.nav-links a:hover {
+    color: #f0e68c; /* Light yellow color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #39FF14; /* Change text color to neon green */
+    user-select: none;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: auto;
+}
+
+/* Image container that aligns images evenly across the page */
+.image-container {
+    display: flex;
+    justify-content: space-evenly; /* Distribute images evenly across the page */
+    align-items: center;
+    gap: 20px; /* Add space between images */
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow images to wrap on smaller screens */
+}
+
+/* Style for each image item (image + caption) */
+.image-item {
+    text-align: center;
+    max-width: 400px;
+    position: relative;
+}
+
+/* Style for the alter images */
+.alter-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #39FF14; /* Change border color to neon green */
+    border-radius: 10px;
+    background: none; /* Remove any background */
+    box-shadow: none; /* Remove any shadows if there are any */
+}
+
+/* Style for the captions */
+.caption {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: white; /* Change text color to neon green */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive; /* Optional: You can use a different font here */
+}

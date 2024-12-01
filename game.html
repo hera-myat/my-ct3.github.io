@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HUMAN INVASION GAME</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+  <div id="game-container">
+    <h1>HUMAN INVASION</h1>
+    <p>USE ARROW KEYS TO PLAY.</p>
+
+    <div id="game-screen">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+    <div id="score-board">
+      <p>SCORE: <span id="score">0</span></p>
+    </div>
+    <div id="controls">
+      <button id="pauseButton">PAUSE</button>
+      <button id="continueButton" disabled>CONTINUE</button>
+    </div>
+    <div id="goBackButton">
+      <button id="backButton">RETURN</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

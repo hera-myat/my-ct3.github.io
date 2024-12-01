@@ -1,0 +1,134 @@
+/* General styles for the gallery page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent text selection and dragging */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive; /* Consistent font for entire page */
+    color: #C0C0C0; /* Initial color set to a light silver */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+    background: black; /* Transparent background */
+    overflow-y: auto; /* Allow vertical scrolling */
+    height: auto; /* Allow the page to adjust height */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content to the top */
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px; /* Larger font size for main title */
+    margin-top: 60px; /* Reduced top margin for better positioning */
+    margin-bottom: 40px;
+    color: #C0C0C0; /* Initial silver */
+    animation: metallic-shift 5s infinite alternate; /* Adding metallic text color animation */
+}
+
+h2 {
+    text-align: center;
+    font-size: 20px; /* Medium size for section titles */
+    margin: 20px 0;
+    color: #C0C0C0; /* Initial silver color */
+    animation: metallic-shift 5s infinite alternate; /* Animation for h2 */
+}
+
+p {
+    text-align: center;
+    font-size: 20px; /* Slightly larger font for descriptions */
+    margin-bottom: 10px;
+    color: #C0C0C0; /* Initial silver color */
+    animation: metallic-shift 5s infinite alternate; /* Animation for paragraph */
+}
+
+/* Styling for the "Go Back" button */
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #222;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive; /* Consistent font for entire page */
+    font-size: 12px;
+    z-index: 10;
+}
+
+.go-back-btn:hover {
+    background-color: #555;
+}
+
+/* Styling for the gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%; /* Limit width of gallery */
+    max-width: 1200px; /* Max width to ensure it doesn't stretch too much on large screens */
+    margin-top: 20px;
+    justify-items: center; /* Center items in each grid cell */
+    margin-bottom: 30px; /* Add some bottom margin for better spacing */
+    margin-left: 120px;
+}
+
+.gallery-item {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 100%; /* Ensure gallery items take full width of the grid */
+    max-width: 800px; /* Set max width for each item */
+}
+
+.gallery-item iframe {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    width: 100%; /* Make iframe fill the entire gallery item */
+    height: 400px; /* Set a consistent height for the iframe */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.5em;
+    color: #bbb;
+    animation: metallic-shift 5s infinite alternate; /* Animation for footer text */
+}
+
+/* Metallic text color animation */
+@keyframes metallic-shift {
+    0% {
+        color: #C0C0C0; /* Light silver */
+    }
+    25% {
+        color: #A0A0A0; /* Darker silver */
+    }
+    50% {
+        color: #B0B0B0; /* Medium silver */
+    }
+    75% {
+        color: #D0D0D0; /* Lighter silver */
+    }
+    100% {
+        color: #C0C0C0; /* Return to light silver */
+    }
+}

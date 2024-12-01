@@ -1,0 +1,185 @@
+/* UFO Floating Animation */
+@keyframes floatUFO {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(25vw) translateY(-10vh);
+    }
+    50% {
+        transform: translateX(50vw) translateY(10vh);
+    }
+    75% {
+        transform: translateX(75vw) translateY(-10vh);
+    }
+    100% {
+        transform: translateX(100vw) translateY(0);
+    }
+}
+
+/* UFO Image Styling */
+.ufo {
+    position: fixed;
+    top: 10vh; /* Start at a random position from the top */
+    left: 0; /* Start at the far left */
+    width: 100px; /* UFO size */
+    height: auto;
+    z-index: 5;
+    animation: floatUFO 10s infinite linear; /* Apply the floating animation */
+}
+
+
+/* Prevent text selection and dragging */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #1F51FF; /* Default text color */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+}
+
+body {
+    background: transparent; /* Make the body background transparent */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 100vh; /* Ensure full page height */
+}
+
+/* Flashy animation for text */
+@keyframes flashyText {
+    0% { color: #1F51FF; } /* Neon Blue */
+    25% { color: #00FFFF; } /* Cyan */
+    50% { color: #39FF14; } /* Neon Green */
+    75% { color: #00CED1; } /* Dark Turquoise */
+    100% { color: #1F51FF; } /* Back to Neon Blue */
+}
+
+/* Apply animation to all targeted text elements */
+nav a, .click-caption, .logo a, .introduction, .alien-container, .nav-links li, h1, p {
+    animation: flashyText 2s infinite; /* Flashy animation */
+    cursor: pointer; /* Make the elements clickable */
+}
+
+/* Gradient effect on hover */
+nav a:hover, .click-caption:hover, .logo a:hover, .introduction:hover, .alien-container:hover, .nav-links li:hover, h1:hover, p:hover {
+    text-shadow: 0 0 8px #00FFFF, 0 0 12px #39FF14; /* Add glow effect on hover */
+}
+
+/* Rest of the styling remains unchanged */
+
+nav {
+    background-color: transparent; /* Keep the navigation bar background dark */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 1.1em;
+    user-select: none;
+}
+
+.nav-links a:hover {
+    color: #f0e68c; /* Light yellow color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5em;
+    user-select: none;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+    padding-top: 200px;
+    position: relative;
+    z-index: 1;
+}
+
+.selfies-content {
+    padding: 20px;
+    text-align: center;
+    z-index: 1; /* Ensure content is above canvas */
+    position: relative;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.selfies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    z-index: 2; /* Ensure images are above canvas */
+    position: relative;
+}
+
+.selfies-grid img {
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #1F51FF;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.selfies-grid img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ffcc00;
+}
+
+.selfies-grid figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selfies-grid figcaption {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #1F51FF; /* Match neon blue theme */
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #39FF14; /* Add glowing effect */
+    animation: flashyText 2s infinite; /* Flashy animation for captions */
+    text-align: center;
+}

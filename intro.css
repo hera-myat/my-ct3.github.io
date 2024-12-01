@@ -1,0 +1,324 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set font and text properties for title and header */
+body {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 0;
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+}
+
+#title {
+    font-size: 20px; /* Smaller font size for the title */
+    color: #black;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#header-text {
+    font-size: 16px; /* Smaller font size for the header */
+    color: #black;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.intro {
+    padding: 50px;
+    text-align: center;
+}
+
+
+/* Ensure p5.js canvas (shooting stars) covers the entire background */
+#defaultCanvas0 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Style the rest of your elements as before */
+nav {
+    background-color: transparent; /* Keep the navigation bar background dark */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+nav .logo a {
+    color: #ff13f0;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links li a {
+    color: #ff13f0;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav .nav-links .dropdown {
+    position: relative;
+}
+
+nav .nav-links .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+nav .nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+/*    background-color: #333;*/
+    min-width: 160px;
+    z-index: 1;
+}
+
+nav .nav-links .dropdown-content a {
+    padding: 0px;
+    text-align: middle;
+}
+
+nav .nav-links .dropdown-content a:hover {
+    color: #f0e68c;
+}
+
+/* Intro section */
+.intro {
+    text-align: center;
+    padding: 60px 20px;
+/*    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;*/
+/*    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+}
+
+/*.intro h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    display: inline-block;
+}*/
+
+.intro p {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Neon flashing animation for main title */
+@keyframes neon-flash {
+    0% { color: #00ff00; text-shadow: 0 0 2px #00ff00, 0 0 5px #00ff00; }
+    25% { color: #ff00ff; text-shadow: 0 0 2px #ff00ff, 0 0 5px #ff00ff; }
+    50% { color: #00ffff; text-shadow: 0 0 2px #00ffff, 0 0 5px #00ffff; }
+    75% { color: #ff9900; text-shadow: 0 0 2px #ff9900, 0 0 5px #ff9900; }
+    100% { color: #00ff00; text-shadow: 0 0 2px #00ff00, 0 0 5px #00ff00; }
+}
+
+/* Apply the animation to the main title */
+.main-title {
+    font-size: 2.5rem; /* Adjust size for visibility */
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Press Start 2P', cursive; /* Pixel/Alien font */
+    animation: neon-flash 2s infinite; /* 2-second duration, infinite loop */
+}
+
+
+/* Apply the animation to the main title */
+.main-title {
+    font-size: 2.5rem; /* Adjust size for visibility */
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Press Start 2P', cursive; /* Pixel/Alien font */
+    animation: neon-flash 2s infinite; /* 2-second duration, infinite loop */
+}
+
+/* Video Placeholder Section */
+.video-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 20px;
+}
+
+.video-container {
+    text-align: center;
+}
+
+.video-thumbnail {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.video-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #39FF14;
+}
+
+.gibberish-container {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+}
+
+.gibberish-block {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.gibberish-text {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.translate-button {
+    font-size: 1rem;
+    padding: 8px 15px;
+    border: none;
+    background-color: #00ff00;
+    color: #000;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.translate-button:hover {
+    background-color: #ff00ff;
+    color: #fff;
+}
+
+
+/* UFO Container */
+.ufo-container {
+    position: fixed; /* Stay fixed relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interference with user interactions */
+    overflow: hidden;
+}
+
+/* UFO Image */
+.ufo {
+    position: absolute;
+    width: 150px; /* Adjust UFO size */
+    animation: floatAcross 12s infinite linear;
+}
+
+/* Keyframes for UFO floating across the page */
+@keyframes floatAcross {
+    0% {
+        transform: translate(-10%, 10%); /* Start off-screen at bottom-left */
+    }
+    25% {
+        transform: translate(30%, 40%); /* Move to somewhere in the middle */
+    }
+    50% {
+        transform: translate(80%, 20%); /* Move to near the top-right */
+    }
+    75% {
+        transform: translate(40%, 70%); /* Move back towards the middle-bottom */
+    }
+    100% {
+        transform: translate(110%, 10%); /* Exit off-screen at bottom-right */
+    }
+}
+
+/* UFO Container */
+.ufo-1-container {
+    position: fixed; /* Stay fixed relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevent interference with user interactions */
+    overflow: hidden;
+}
+
+/* UFO Image */
+.ufo-1 {
+    position: absolute;
+    width: 150px; /* Adjust UFO size */
+    animation: floatAcrossRight 12s infinite linear;
+}
+
+/* Keyframes for UFO floating across the page */
+@keyframes floatAcrossRight {
+    0% {
+        transform: translate(-10%, 10%); /* Start off-screen at bottom-left */
+    }
+    25% {
+        transform: translate(30%, 40%); /* Move to somewhere in the middle */
+    }
+    50% {
+        transform: translate(80%, 20%); /* Move to near the top-right */
+    }
+    75% {
+        transform: translate(40%, 70%); /* Move back towards the middle-bottom */
+    }
+    100% {
+        transform: translate(110%, 10%); /* Exit off-screen at bottom-right */
+    }
+}
+
+/* Ensure the page container takes full height */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+/* Content section takes remaining space */
+.content {
+    flex: 1; /* Fills available space above the footer */
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e; /* Adjust to your theme */
+    color: #fff; /* Adjust for contrast */
+    text-align: center;
+    padding: 10px 20px;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+

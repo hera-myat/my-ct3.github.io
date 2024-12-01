@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Effect</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="galaxy_effect.js"></script>
+</head>
+<body>
+    <script>
+        let stars = [];
+
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            noStroke();
+            for (let i = 0; i < 1000; i++) {
+                stars.push(new Star());
+            }
+        }
+
+        function draw() {
+            background(0, 0, 20);
+
+            // Update and show stars in galaxy
+            for (let star of stars) {
+                star.update();
+                star.show();
+            }
+        }
+
+        class Star {
+            constructor() {
+                this.x = random(width);
+                this.y = random(height);
+                this.z = random(width);
+            }
+
+            update() {
+                this.z -= 0.1;
+                if (this.z < 1) this.z = width;
+            }
+
+            show() {
+                let sx = map(this.x / this.z, 0, 1, 0, width);
+                let sy = map(this.y / this.z, 0, 1, 0, height);
+                let size = map(this.z, 0, width, 5, 0);
+                fill(255);
+                ellipse(sx, sy, size, size);
+            }
+        }
+    </script>
+</body>
+</html>

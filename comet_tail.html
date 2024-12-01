@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comet Tail</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        let comet;
+
+        function setup() {
+            createCanvas(400, 400);
+            comet = new Comet(width / 2, height / 2);
+        }
+
+        function draw() {
+            background(0);
+            comet.update();
+            comet.show();
+        }
+
+        class Comet {
+            constructor(x, y) {
+                this.pos = createVector(x, y);
+                this.vel = createVector(random(2, 4), random(1, 2));
+                this.tail = [];
+            }
+
+            update() {
+                this.pos.add(this.vel);
+                this.tail.push(this.pos.copy());
+                if (this.tail.length > 10) {
+                    this.tail.shift();
+                }
+            }
+
+            show() {
+                for (let i = 0; i < this.tail.length; i++) {
+                    let alpha = map(i, 0, this.tail.length, 0, 255);
+                    fill(255, 255, 255, alpha);
+                    noStroke();
+                    ellipse(this.tail[i].x, this.tail[i].y, 10, 10);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

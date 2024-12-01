@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Sky</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="starry_sky.js"></script>
+</head>
+<body>
+    <script>
+        function setup() {
+            createCanvas(windowWidth, windowHeight);
+            noStroke();
+        }
+
+        function draw() {
+            background(0, 0, 20); // Dark space-like background
+
+            // Draw stars
+            for (let i = 0; i < 100; i++) {
+                let x = random(width);
+                let y = random(height);
+                let size = random(1, 4);
+                fill(255);
+                ellipse(x, y, size, size);
+            }
+        }
+    </script>
+</body>
+</html>

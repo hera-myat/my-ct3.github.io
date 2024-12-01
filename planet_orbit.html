@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Orbit</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        let planet;
+        let center;
+
+        function setup() {
+            createCanvas(400, 400);
+            center = createVector(width / 2, height / 2);
+        }
+
+        function draw() {
+            background(0);
+            if (planet) {
+                planet.update(center);
+                planet.show();
+            }
+        }
+
+        function mousePressed() {
+            planet = new Planet(mouseX, mouseY);
+        }
+
+        class Planet {
+            constructor(x, y) {
+                this.pos = createVector(x, y);
+                this.angle = 0;
+                this.orbitRadius = dist(width / 2, height / 2, x, y);
+            }
+
+            update(center) {
+                this.angle += 0.02;
+                this.pos.x = center.x + cos(this.angle) * this.orbitRadius;
+                this.pos.y = center.y + sin(this.angle) * this.orbitRadius;
+            }
+
+            show() {
+                fill(255, 100, 100);
+                noStroke();
+                ellipse(this.pos.x, this.pos.y, 20, 20);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CT3 VLOG</title>
+    <link rel="stylesheet" href="intro.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel/Alien font -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="intro.html">MYCT3</a>
+        </div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="intro.html" class="dropbtn">PJT8</a>
+                <div class="dropdown-content">
+                    <a href="ct8.html">CT8</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">ALTER</a>
+                <div class="dropdown-content">
+                    <!-- Correct the links to "alters.html" and "selfies.html" -->
+                    <a href="alters.html">ALTERS</a>
+                    <a href="selfies.html">SELFIES</a>
+                    <a href="gallery.html">GALLERY</a>                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">VLOG</a>
+                <div class="dropdown-content">
+                    <a href="GRWM.html">GRWM</a>
+                    <a href="game.html">GAME</a>
+                </div>
+            </li>
+            <li><a href="shop.html">SHOP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Intro Section -->
+    <div class="intro">
+        <h1 class="main-title">YOU HAVE LANDED @ NEPTUNE-T3</h1> <!-- Static Title -->
+        <p id="header-text"></p> <!-- Typing Effect for Header Text -->
+    </div>
+
+    <!-- Video Placeholder Section -->
+    <div class="video-placeholder">
+        <div class="video-container">
+            <!-- Using <video> tag to display video -->
+            <video autoplay controls muted class="video-thumbnail">
+                <source src="media/space.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p class="video-text">NEPTUNE-T3 ON LIVE</p>
+        </div>
+    </div>
+
+    <!-- Gibberish Text Blocks -->
+    <div class="gibberish-container">
+        <div class="gibberish-block" id="gibberish-block-1">
+            <p class="gibberish-text" data-gibberish="မင်္ဂလာပါ။ ကျွန်မနာမည်က ခင်ရူပါမြတ်ပါ။ ၂၀၂၂ ခုနှစ် ဩဂုတ်လလောက်မှာ ကျွန်မ အမေရိကန် ကို လာခဲ့တယ်။ ယဉ်ကျေးမှု၊ လူမျိုးရေးခွဲခြားမှု စတာတွေ အပါအဝင် ကဏ္ဍပေါင်းစုံကြောင့် ကျွန်မ ဒီကို လာကတည်းက တကယ်ကို ခက်ခဲပါတယ်။ ဒါပေမယ့် ဒီလောက်ထိ လာခဲ့ရတာ ဂုဏ်ယူမိပါတယ်။" data-english="Hey, I am CT3. I came to this Earth around 2000 BC. It's giving antique, lol. I don't speak human language that much but I tried my best. LOL.">မင်္ဂလာပါ။ ကျွန်မနာမည်က ခင်ရူပါမြတ်ပါ။ ၂၀၂၂ ခုနှစ် ဩဂုတ်လလောက်မှာ ကျွန်မ အမေရိကန် ကို လာခဲ့တယ်။ ယဉ်ကျေးမှု၊ လူမျိုးရေးခွဲခြားမှု စတာတွေ အပါအဝင် ကဏ္ဍပေါင်းစုံကြောင့် ကျွန်မ ဒီကို လာကတည်းက တကယ်ကို ခက်ခဲပါတယ်။ ဒါပေမယ့် ဒီလောက်ထိ လာခဲ့ရတာ ဂုဏ်ယူမိပါတယ်။</p>
+            <button class="translate-button" onclick="toggleTranslation('gibberish-block-1')">Translate</button>
+        </div>
+        <div class="gibberish-block" id="gibberish-block-2">
+            <p class="gibberish-text" data-gibberish="သူတို့က ငါတို့ကို ဒီမှာ ဂြိုလ်သားလို့ ခေါ်တယ်။ ဒီကို ခြေချလိုက်တာနဲ့ လုံးဝ ခွဲခြားဆက်ဆံခံရတယ်လို့ ခံစားရတယ်။" data-english="They call us ALIENS here. IDK why I feel discriminated!!!">သူတို့က ငါတို့ကို ဒီမှာ ဂြိုလ်သားလို့ ခေါ်တယ်။ ဒီကို ခြေချလိုက်တာနဲ့ လုံးဝ ခွဲခြားဆက်ဆံခံရတယ်လို့ ခံစားရတယ်။</p>
+            <button class="translate-button" onclick="toggleTranslation('gibberish-block-2')">Translate</button>
+        </div>
+        <div class="gibberish-block" id="gibberish-block-3">
+            <p class="gibberish-text" data-gibberish="ဂြိုလ်သားရှိတယ်ဆိုတာ မင်းယုံလား။ ပိုမိုသိရှိရန် ကျွန်ုပ်၏စာမျက်နှာကိုလေ့လာပါ သို့မဟုတ် ကျွန်ုပ်ကိုသိရန်၊ ဟီးဟီး။" data-english="Do you believe ALIENS exist? Well, here I am. Anyway, explore the page to learn more or more about me.">ဂြိုလ်သားရှိတယ်ဆိုတာ မင်းယုံလား။ ပိုမိုသိရှိရန် ကျွန်ုပ်၏စာမျက်နှာကိုလေ့လာပါ သို့မဟုတ် ကျွန်ုပ်ကိုသိရန်၊ ဟီးဟီး။</p>
+            <button class="translate-button" onclick="toggleTranslation('gibberish-block-3')">Translate</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 My CT3 Website. All rights reserved.</p>
+    </footer>
+
+    <script src="intro.js"></script> <!-- Link to external JavaScript file -->
+    <script src="intro-bg.js"></script>
+    <script src="gibberish.js"></script>
+</body>
+</html>

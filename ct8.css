@@ -1,0 +1,260 @@
+/* UFO Floating Animation */
+@keyframes floatUFO {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(25vw) translateY(-10vh);
+    }
+    50% {
+        transform: translateX(50vw) translateY(10vh);
+    }
+    75% {
+        transform: translateX(75vw) translateY(-10vh);
+    }
+    100% {
+        transform: translateX(100vw) translateY(0);
+    }
+}
+
+/* UFO Image Styling */
+.ufo {
+    position: fixed;
+    top: 10vh; /* Start at a random position from the top */
+    left: 0; /* Start at the far left */
+    width: 100px; /* UFO size */
+    height: auto;
+    z-index: 5;
+    animation: floatUFO 10s infinite linear; /* Apply the floating animation */
+}
+
+/* Prevent text selection and dragging */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+}
+
+body {
+    background: black; /* Black background before p5.js loads */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+/* Gradient effect for text */
+@keyframes gradientEffect {
+    0% {
+        background-image: linear-gradient(45deg, #ff00ff, #00ffff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    50% {
+        background-image: linear-gradient(45deg, #ff0000, #ff9900);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    100% {
+        background-image: linear-gradient(45deg, #00ff00, #0000ff);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Apply the gradient effect to any text that should have this effect */
+nav a, .click-caption, .logo a, .introduction, .alien-container, .nav-links li, h1, p {
+    background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* Initial gradient */
+    -webkit-background-clip: text; /* Clip the background to text */
+    color: transparent; /* Set the text color to transparent */
+    transition: background-image 0.5s ease; /* Smooth transition */
+    cursor: pointer; /* Make the elements clickable */
+}
+
+/* Gradient effect on hover */
+nav a:hover, .click-caption:hover, .logo a:hover, .introduction:hover, .alien-container:hover, .nav-links li:hover, h1:hover, p:hover {
+    animation: gradientEffect 3s infinite; /* Apply gradient effect animation */
+}
+
+/* Style the rest of your elements as before */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Keep the navigation bar background dark */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Default color for nav links */
+    padding: 5px 10px;
+    font-size: 1.1em;
+    user-select: none;
+}
+
+.nav-links a:hover {
+    color: #f0e68c; /* Light yellow color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    user-select: none;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.alien-container {
+    margin: 30px 0px;
+    margin-bottom: 80px;
+    user-select: none;
+    cursor: pointer;
+    z-index: 10;
+    text-align: center;
+}
+
+.alien-image {
+    width: 400px;
+    height: auto;
+    pointer-events: auto;
+}
+
+.click-caption {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: -80px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.introduction {
+    font-size: 1.2em;
+    margin: 5px auto;
+    max-width: 800px;
+    line-height: 1.5;
+    user-select: none;
+}
+
+/* Gradient effect for text */
+@keyframes pinkShift {
+    0% {
+        background-image: linear-gradient(45deg, #ff00ff, #ff1493); /* Neon pink to deep pink */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    25% {
+        background-image: linear-gradient(45deg, #ff69b4, #ff1493); /* Hot pink to deep pink */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    50% {
+        background-image: linear-gradient(45deg, #ff1493, #ff00ff); /* Deep pink to neon pink */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    75% {
+        background-image: linear-gradient(45deg, #ff00ff, #ff69b4); /* Neon pink to hot pink */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    100% {
+        background-image: linear-gradient(45deg, #ff00ff, #ff1493); /* Loop back to neon pink */
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+}
+
+/* Apply the pink shift animation to text */
+nav a, .click-caption, .logo a, .introduction, .alien-container, .nav-links li, h1, p {
+    animation: pinkShift 3s infinite linear; /* Smooth transition between pink shades */
+    -webkit-background-clip: text; /* Clip the gradient to text */
+    color: transparent; /* Text remains transparent to show gradient */
+    cursor: pointer; /* Make interactive elements clickable */
+}
+
+/* Translate button styles */
+.translate-btn {
+    font-family: 'Press Start 2P', cursive; /* Match font style */
+    font-size: 1.1em;
+    padding: 10px 20px;
+    background-image: linear-gradient(45deg, #ff1493, #ff00ff); /* Start with pink gradient */
+    -webkit-background-clip: text; /* Clip gradient to text */
+    color: transparent; /* Make text transparent */
+    border: 2px solid transparent;
+    border-radius: 8px !important; /* Rounded corners */
+    cursor: pointer;
+    text-transform: uppercase; /* Uppercase text for emphasis */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(255, 20, 147, 0.5) !important; /* Pink shadow for a neon glow effect */
+    transition: background-image 0.5s ease, transform 0.2s ease !important; /* Smooth transitions */
+}
+
+/* Hover effect for the translate button */
+.translate-btn:hover {
+    background-image: linear-gradient(45deg, #ff69b4, #ff1493); /* Slightly varied pink shades */
+    transform: scale(1.05) !important; /* Slight zoom effect on hover */
+    box-shadow: 0 8px 16px rgba(255, 20, 147, 0.7) !important; /* Brighter pink glow */
+}
+
+/* Other button states (optional) */
+.translate-btn:active {
+    transform: scale(0.98) !important;
+    box-shadow: 0 4px 8px rgba(255, 20, 147, 0.5) !important;
+}
+
+.translate-btn:focus {
+    outline: none;
+    border: 2px solid #ff69b4 !important; /* Highlight focus */
+}
+
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: auto;
+}

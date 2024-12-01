@@ -1,0 +1,372 @@
+/* Prevent text selection and dragging */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #39FF14; /* Change text color to neon green */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* For Safari */
+    -ms-user-select: none; /* For Internet Explorer */
+    -moz-user-select: none; /* For Firefox */
+}
+
+body {
+    background: black; /* Make the body background transparent */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 100vh; /* Ensure full page height */
+}
+
+/* Apply the gradient effect to any text that should have this effect */
+nav a, .click-caption, .logo a, .introduction, .alien-container, .nav-links li, h1, p {
+    background-image: linear-gradient(45deg, #ff00ff, #00ffff); /* Initial gradient */
+    -webkit-background-clip: text; /* Clip the background to text */
+    color: #39FF14; /* Change text color to neon green */
+    transition: background-image 0.5s ease; /* Smooth transition */
+    cursor: pointer; /* Make the elements clickable */
+}
+
+/* Gradient effect on hover */
+nav a:hover, .click-caption:hover, .logo a:hover, .introduction:hover, .alien-container:hover, .nav-links li:hover, h1:hover, p:hover {
+    animation: gradientEffect 3s infinite; /* Apply gradient effect animation */
+}
+
+/* Typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Blink cursor effect */
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Neon green "Explore My Alters" title without neon effect */
+h1.title {
+    font-size: 2em;
+    color: #39FF14; /* Neon Green color */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide text that overflows */
+    border-right: 4px solid #39FF14; /* Simulate a cursor effect */
+    animation: typing 3.5s steps(30) 1s 1 normal both, blink-caret 0.75s step-end infinite;
+}
+
+/* Style the rest of your elements as before */
+nav {
+    background-color: rgba(0, 0, 0, 0.8); /* Keep the navigation bar background dark */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #39FF14; /* Change text color to neon green */
+    padding: 5px 10px;
+    font-size: 1.1em;
+    user-select: none;
+}
+
+.nav-links a:hover {
+    color: #f0e68c; /* Light yellow color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: black;
+    padding: 10px;
+    border: 1px solid #fff;
+    z-index: 5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #39FF14; /* Change text color to neon green */
+    user-select: none;
+    font-weight: bold;
+}
+
+.content {
+    text-align: center;
+    padding-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Shop Content */
+.shop-container {
+    text-align: center;
+    padding: 50px;
+}
+
+.shop-title {
+    font-size: 36px;
+    color: #39FF14;
+    margin-bottom: 30px;
+}
+
+/* Email Subscription Pop-up */
+#email-popup {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#email-popup .popup-content {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+}
+
+#email-popup h2 {
+    margin-top: 0;
+}
+
+#email-popup input {
+    padding: 10px;
+    width: 80%;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#email-popup button {
+    padding: 10px 20px;
+    background-color: #39FF14;
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#email-popup button:hover {
+    background-color: #45a049;
+}
+
+/* Close button for email popup */
+#close-email-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.product-panel {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-panel:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-size: 24px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.product-price {
+    font-size: 20px;
+    color: #39FF14;
+}
+
+.add-to-cart {
+    background-color: #39FF14;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #28a745;
+}
+
+/* Cart Button */
+.cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#view-cart {
+    background-color: #39FF14;
+    color: #000;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
+#view-cart:hover {
+    background-color: #28a745;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+#cart-items-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#cart-items-list li {
+    margin-bottom: 10px;
+}
+
+#total-cost {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* DONE Button */
+#done-btn {
+    padding: 10px 20px;
+    background-color: #39FF14;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#done-btn:hover {
+    background-color: red;
+}
+
+/* Ensure the playlist title is centered, resized and positioned correctly */
+.playlist-title {
+    font-size: 20px;  /* Set the desired size */
+    color: #39FF14;   /* Neon green */
+    text-align: center; /* Center the title */
+    margin-top: 20px; /* Space above */
+    margin-bottom: 40px; /* Space below */
+}
+
+/* Flexbox container for Spotify iframes */
+.spotify-embeds-container {
+    display: flex; /* Align items in a row */
+    justify-content: space-evenly; /* Evenly space the items */
+    gap: 20px; /* Add space between the items */
+    flex-wrap: wrap; /* Allow the embeds to wrap if necessary */
+    margin-top: 20px; /* Space from the title */
+    margin-bottom: 50px; /* Space below the embeds */
+}
+
+/* Style for individual Spotify iframe embeds */
+.spotify-embed {
+    border-radius: 12px;
+    width: 25%; /* Adjust width for each embed */
+    min-width: 280px; /* Ensure the minimum width to avoid squeezing */
+    height: 360px; /* Set consistent height */
+    box-sizing: border-box; /* Ensure padding and borders don't affect size */
+}
+
+/* Optional: Add some styling on hover to make it interactive */
+.spotify-embed:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s ease;
+}
+
+

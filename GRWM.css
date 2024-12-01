@@ -1,0 +1,117 @@
+/* General styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: #39FF14; /* Neon green text */
+    user-select: none; /* Disable text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* Internet Explorer */
+    -moz-user-select: none; /* Firefox */
+    overflow-y: scroll; /* Allow vertical scrolling */
+    height: 100vh; /* Ensure full page height */
+    background: black; /* Set default background color */
+}
+
+/* Container for content */
+.content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; /* Ensure it's above the p5.js canvas */
+}
+
+/* GRWM video styling */
+.grwm-center {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    z-index: 3; /* Keep it above the canvas animation */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing effect */
+    animation: pulse 2s infinite; /* Add pulse animation */
+}
+
+/* Pulse effect for the video */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Ensure the p5.js canvas is in the background */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 1; /* Place the canvas below other elements */
+    pointer-events: none; /* Prevent interference with interactions */
+}
+
+/* Go Back Button */
+.go-back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: #39FF14; /* Neon green */
+    background-color: black;
+    padding: 10px 20px;
+    border: 2px solid #39FF14;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
+    z-index: 3; /* Ensure it appears above all elements */
+    transition: all 0.3s ease;
+}
+
+.go-back-btn:hover {
+    background-color: #39FF14;
+    color: black;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 1);
+}
+
+/* Video Caption */
+.video-caption {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    color: #39FF14; /* Neon green */
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.8);
+    z-index: 2; /* Ensure it appears above the canvas */
+    font-size: 18px;
+}
+
+/* Star Styles */
+.star {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #39FF14; /* Yellow color for the star */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* Star shape */
+    animation: pop 0.6s ease-out forwards;
+    z-index: 2;
+    pointer-events: none; /* Ensure stars don't block other interactions */
+}
+
+/* Star Pop Animation */
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}

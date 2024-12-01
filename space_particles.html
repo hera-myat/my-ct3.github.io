@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Particles</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <script>
+        let particles = [];
+
+        function setup() {
+            createCanvas(400, 400);
+            background(0);
+        }
+
+        function draw() {
+            background(0, 10); // Fade effect
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].show();
+            }
+        }
+
+        function mousePressed() {
+            let p = new Particle(mouseX, mouseY);
+            particles.push(p);
+        }
+
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vel = createVector(random(-2, 2), random(-2, 2));
+                this.size = random(5, 15);
+            }
+
+            update() {
+                this.x += this.vel.x;
+                this.y += this.vel.y;
+            }
+
+            show() {
+                fill(255, random(100, 255), random(100, 255));
+                noStroke();
+                ellipse(this.x, this.y, this.size);
+            }
+        }
+    </script>
+</body>
+</html>

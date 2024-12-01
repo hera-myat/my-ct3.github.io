@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP HMUAN IASVOIN</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Pixel/Alien font -->
+    <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+    <!-- Email Subscription Pop-up -->
+    <div id="email-popup" class="popup">
+        <div class="popup-content">
+            <h2>SUBSCRIBE TO SHOP</h2>
+            <p>Enter Your Email to Shop @ HI.</p>
+            <input type="email" id="email-input" placeholder="Enter your valid email">
+            <button id="subscribe-btn">SUBSCRIBE</button>
+            <button id="close-email-popup" class="close-btn">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <a href="intro.html">MYCT3</a>
+        </div>
+        <ul class="nav-links">
+            <li class="dropdown">
+                <a href="intro.html" class="dropbtn">PJT8</a>
+                <div class="dropdown-content">
+                    <a href="ct8.html">CT8</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">ALTER</a>
+                <div class="dropdown-content">
+                    <!-- Links to the ALTER pages -->
+                    <a href="alters.html">ALTERS</a>
+                    <a href="selfies.html">SELFIES</a>
+                    <a href="gallery.html">GALLERY</a>                    
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">VLOG</a>
+                <div class="dropdown-content">
+                    <a href="GRWM.html">GRWM</a>
+                    <a href="game.html">GAME</a>
+                </div>
+            </li>
+            <li><a href="shop.html">SHOP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Shop Content -->
+    <div class="shop-container">
+        <h1 class="shop-title">SHOP HMUAN IASVOIN</h1>
+        <p>Lmiietd Eitdion Mrchaendise. No Ployseetr. Subscribe the Newsletter.</p>
+        <div class="product-grid">
+            <!-- Product Panels -->
+            <div class="product-panel">
+                <img src="media/tshirt.png" alt="HI TShirt" class="product-image">
+                <h3 class="product-name">HI-542D53484952540A</h3>
+                <p class="product-price">$29.99</p>
+                <button class="add-to-cart">ADD-TO-CART</button>
+            </div>
+
+            <div class="product-panel">
+                <img src="media/book.png" alt="HI Book" class="product-image">
+                <h3 class="product-name">HI-424F4F4B0A0A</h3>
+                <p class="product-price">$12.99</p>
+                <button class="add-to-cart">ADD-TO-CART</button>
+            </div>
+
+            <div class="product-panel">
+                <img src="media/totebag.png" alt="HI Bag" class="product-image">
+                <h3 class="product-name">HI-4241470A0A</h3>
+                <p class="product-price">$39.99</p>
+                <button class="add-to-cart">ADD-TO-CART</button>
+            </div>
+
+            <div class="product-panel">
+                <img src="media/beanie.png" alt="HI  Beanie" class="product-image">
+                <h3 class="product-name">HI-4245414E49450A0A</h3>
+                <p class="product-price">$25.99</p>
+                <button class="add-to-cart">ADD-TO-CART</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Button -->
+    <div class="cart-button">
+        <button id="view-cart">VIEW CART</button>
+    </div>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items-list">
+                <!-- Cart items will be listed here -->
+            </ul>
+            <p id="total-cost">Total Cost: $0.00</p>
+            <!-- DONE Button -->
+            <button id="done-btn">DONE</button>
+        </div>
+    </div>
+
+    <!-- Playlist Title -->
+    <h2 class="playlist-title">BONUS-MY-PLAYLIST</h2>
+
+    <!-- Spotify Embeds -->
+    <div class="spotify-embeds-container">
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/track/7Lql3ncIuC97UY7S88o3Xa?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/track/4VW7AOYpOQBiT3jkVF032R?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <iframe class="spotify-embed" src="https://open.spotify.com/embed/track/3qQDdaeaMH29kRwUQWnjKq?utm_source=generator" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+
+
+    <script src="shop.js"></script>
+</body>
+</html>
